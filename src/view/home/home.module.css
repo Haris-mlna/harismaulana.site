@@ -1,30 +1,129 @@
-.pages {
+.header {
+	width: 95%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.hero_title_container {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.hero_title {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	background-color: var(--ui-dark-accent);
+	border-radius: 12px;
+
+	animation: TITLECONTAINER 1000ms ease-in-out;
+}
+
+.title {
+	width: 100%;
+	letter-spacing: 4px;
+	opacity: 0;
+	color: var(--ui-primary);
+	z-index: 100;
+
+	animation: TITLE 1200ms ease-in-out forwards;
+}
+
+.title2 {
+	animation-delay: 200ms;
+	color: var(--ui-secondary);
+}
+
+.hero_image {
+	width: 80%;
+  display: flex;
+	height: 90%;
+	position: absolute;
+	right: 0;
+	border-radius: 12px;
+	opacity: 0;
+	background-color: var(--ui-dark-accent);
+	z-index: 1;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .2);
+  overflow: hidden;
+
+	animation: IMAGE-HERO 600ms ease-in-out forwards;
+	animation-delay: 1800ms;
+}
+
+.glow_title {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	top: 0;
+	border-radius: 12px;
+	position: absolute;
+	z-index: 1;
+
+	animation: CONTAINERLIGHT 1000ms ease-in-out;
+	animation-delay: 1200ms;
+}
+
+@keyframes TITLECONTAINER {
+	0% {
+		width: 0%;
+		height: 0;
+		transform: translateX(100%);
+	}
+}
+
+@keyframes CONTAINERLIGHT {
+	0% {
+		box-shadow: 0px 0px 4px 2px var(--ui-primary);
+	}
+	10% {
+		box-shadow: none;
+	}
+  20% {
+    box-shadow: 0px 0px 4px 2px var(--ui-primary);
+  }
+  30% {
+    box-shadow: none;
+  }
+}
+
+@keyframes TITLE {
+	0% {
+		transform: translate(300px, 150px);
+		opacity: 0;
+		z-index: 100;
+	}
+
+	50% {
+		transform: translate(300px, 0);
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes IMAGE-HERO {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+		z-index: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.section_1 {
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  width: 400px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 3px;
-}
-
-.container p {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  border-radius: 4px;
-  justify-content: center;
-  color: #fff;
-  align-items: center;
-  margin: 0;
-  background-color: var(--ui-color-primary);
-  text-align: center;
 }
